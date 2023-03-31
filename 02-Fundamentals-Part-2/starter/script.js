@@ -364,3 +364,4 @@ console.log(akshay);
 
 
 //Lecture 43. Dot vs. Bracket Notation
+//How to retrive data from the object and how to change data of the object
