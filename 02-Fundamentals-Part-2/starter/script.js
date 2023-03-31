@@ -409,3 +409,6 @@ console.log(akshay1);
 
 //Akshay has 5 friends, and his bestfriend is called Dinesh
 console.log(`${akshay1.fName} has ${akshay1.frds.length} friends, and his bestfriend is called ${akshay1.frds[1]}`);
+
+
+// Lecture 44. Object Methods start
