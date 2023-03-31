@@ -30,7 +30,7 @@ const appleJuice = fruitProcessor(5,4);
 console.log(appleJuice);
 
 const appleOrange = fruitProcessor(10 , 15);
-console.log(appleOrange);
+console.log(appleOrange)
 
 
 //Lecture 34. Function Declarations vs. Expressions
