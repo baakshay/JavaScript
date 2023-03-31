@@ -365,3 +365,47 @@ console.log(akshay);
 
 //Lecture 43. Dot vs. Bracket Notation
 //How to retrive data from the object and how to change data of the object
+// 1st property is .dot notation by using this we can geting the property from 
+//.dot notaion or retrive the elment from object
+
+const akshay1 = {
+    fName:'Akshay',
+    lName:'Bahadurkar',
+    age:2023-1995,
+    designition:'Developer',
+    frds:['Ravi', 'Dinesh', 'Pavan', 'Navin Bhaiya', 'Nagaraju Bhaiya']
+    
+};
+console.log(akshay1);
+console.log(akshay1.lName); // dot notation 
+//we can do this by []bracket notation also
+console.log(akshay1['designition']); //we have to specify string with property name
+//which is key. the big difference betn two is that in the bracekt notaion we can put 
+//any expression that we like. So we dont explicitly write string.but insted we can 
+//computed some operation because remember the operation is besically an expression 
+//some thing taht producess a value so we can put inside of the bracket.
+
+//////// NOTE : In dot notation we can use only normal property name not a computed 
+//name but in bracket notation we can use normal and computed property name.///////
+const nameKey = 'Name';
+console.log(akshay1['f' + nameKey]);
+console.log(akshay1['l' +nameKey]); // Like this we can computed prperty
+
+//We dont know which property we want to show is that we get this information some 
+//user interface. so we that use prompt function
+//Lets see the exmaple prompt fun return string so we have to store that string in 
+//a variable
+const intrstedIn = prompt('What do you want to know about the akshay ? Choose between fName, lname, age, designition, frds');  
+if(akshay1[intrstedIn]){
+console.log(akshay1[intrstedIn]);
+}
+else{
+    console.log('Wrong request ! Plz Choose between fName, lname, age, designition, frds'); 
+}
+
+akshay1.location = 'India';
+akshay1['twitter'] = '@baakshay';
+console.log(akshay1);
+
+//Akshay has 5 friends, and his bestfriend is called Dinesh
+console.log(`${akshay1.fName} has ${akshay1.frds.length} friends, and his bestfriend is called ${akshay1.frds[1]}`);
