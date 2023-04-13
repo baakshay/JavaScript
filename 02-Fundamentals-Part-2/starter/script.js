@@ -84,6 +84,9 @@ console.log(callDemo);  // we can call like this also
 
 // add name retirement and age
 const workingYears = (birthYear4, fName, lName) =>{
+    // let date = new Date();
+    // let getFullYear = date.getFullYear();      //we can get letest year like this
+    // let ageNew = getFullYear - birthYear4;
     const ageNew = 2023 - birthYear4;
     const retire = 65 - ageNew;
     return `Hi my name is ${fName}  ${lName}. I am ${ageNew} years old and 
@@ -92,8 +95,8 @@ const workingYears = (birthYear4, fName, lName) =>{
 console.log(workingYears(1992,'Akshay','Bahadurkar'));
 console.log(workingYears(2001,'Riddhi','Papalkar'));
 
-// differne of let 
-// let a=10;//globa
+// differnce of let 
+// let a=10;//global
 // function dinesh(){
 // let a=20;//local
 //     console.log("a1",a);
@@ -247,8 +250,12 @@ const aged2 = calAged(yer[1]);
 const aged3 = calAged(yer[yer.length - 1]);
 console.log(aged1,aged2,aged3); // this is the way
 
-const ages = [calAged(yer[0]), calAged(yer[1]), calAged(yer[yer.length - 1])];
-console.log(`final value ${ages}`);
+//const ages = [calAged(yer[0]), calAged(yer[1]), calAged(yer[yer.length - 1])];
+const ages = [aged1, aged2, aged3];
+console.log('////////////////////////////////////////////////');
+console.log(`final value $$$$$$%%%%%*****??????///// ${ages}`);
+console.log('////////////////////////////////////////////////');
+
 /////////////////////////////////////////////////////
 
 // Lecture 40. Basic Array Operations (Methods)
@@ -337,7 +344,7 @@ console.log(tip1,tip2,tip3);
 //the same variable
 
 //just for recap write an array
-const akshayArray = [ //(This is basically adata structure store multiple value which all belongs to Akshay entity)
+const akshayArray = [ //(This is basically a data structure store multiple value which all belongs to Akshay entity)
     'Akshay',         //   
     'Bahadurkar',
     2023 - 1996,
@@ -345,13 +352,13 @@ const akshayArray = [ //(This is basically adata structure store multiple value 
     ['Ravi', 'Dinesh', 'Pawan', 'Navin Bhaiya', 'NAgaraju Bhaiya']
 ];
 console.log(akshayArray);
-//The big difference betn object and array object of the value us that in object the 
-//order of the value does not matter at all when we want to retrive them thats 
-//important to keep in mind. So in array in order which we specify the element matters
-//a lot becasuse thats how we access these element. we can only access the array 
-//element using their order number it means we should used array for more order data
-//an object for on more unstructure data and data that we actually want to name and then
-//retrive from the object based on that name.
+/*The big difference betn object and array object of the value us that in object the 
+order of the value does not matter at all when we want to retrive them thats 
+important to keep in mind. So in array in order which we specify the element matters
+a lot becasuse thats how we access these element. we can only access the array 
+element using their order number it means we should used array for more order data
+an object for on more unstructure data and data that we actually want to name and then
+retrive from the object based on that name. */
 const akshay = {
     fName:'Akshay',
     lName:'Bahadurkar',
@@ -412,3 +419,73 @@ console.log(`${akshay1.fName} has ${akshay1.frds.length} friends, and his bestfr
 
 
 // Lecture 44. Object Methods start
+
+
+
+const joe = {
+    fName: 'akshay',
+    lName: 'Bahadurkar',
+    birthYear1: 1992,
+    frds: ['Pawan', 'Vyankat', 'Dinesh', 'Navin'],
+
+    // calAge: function(birthYear){
+    //     return 2023 - birthYear;
+    // }
+    //console.log(joe.calAge(1992));            // its totally wrong
+
+
+//    calcAge : function() {
+//     console.log(this);                        //we can used joe.birthYear1 also but if 
+//  //we chang the object name so it will no longer used thats why dry we used nad its
+//  // a bad practice and it takes much times if we call this multiple time
+//     return 2023 - this.birthYear1;
+//    }
+    calcAge : function() {
+        this.age = 2023 - this.birthYear1;   //this can store a new property
+        return this.age;
+    }
+
+};
+//console.log(joe);
+//console.log(joe.calAge(1992));         // this is for first
+// console.log(`Your age is ${joe.calcAge()}`);   //this is for second 
+//console.log(`Your age is  ${joe.ageee}`);      // This is for third and its a proper way
+console.log(joe.age);
+
+//Challeng  "Akshay is a 31 -years old developer, and a has a / no driving licenses"
+const info = {
+    name: 'Akshay',
+    last: 'Bahadurkar',
+    birthYear: 1992,
+   marks: 45,
+   date:20,
+    designition: 'Developer',
+    hasDrivingsLicense: true,
+    
+    data : function() {
+        this.age = 2023 - this.birthYear;
+        return this.age;
+    },
+    getSummery : function(){
+        return `${this.name} ${this.last} is a ${this.data()} -years old ${this.designition}, and he has ${hasDrivingsLicense ? 'a' : 'no'} driving licesnse `;
+        // return `${this.name} ${this.last} ${this.marks} ${this.date}`;
+    }
+};
+// if(hasDrivingsLicense){
+//     console.log(`${info.name} is a ${info.age} years old ${info.designition}, and has a driving licenses`);
+// }
+// else{
+//     console.log(`${info.name} is a ${info.age} years old ${info.designition}, and has no driving licenses`);
+
+// }
+console.log(info.getSummery());
+
+
+// Lecture 45. Coding Challenge #3
+
+/*function call inside an array
+function ravi(){
+    console.log("hello");
+}
+let akshay11 = ['ak', ravi()];
+console.log(akshay11[1]);*/
