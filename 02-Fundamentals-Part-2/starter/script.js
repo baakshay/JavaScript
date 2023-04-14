@@ -25,7 +25,7 @@ function fruitProcessor(apple, orange) {
     const juice = `Juice with ${apple} apples and ${orange} oranges`;
     return juice;
 }
-
+//console.log(f)
 const appleJuice = fruitProcessor(5,4);
 console.log(appleJuice);
 
@@ -371,9 +371,9 @@ console.log(akshay);
 
 
 //Lecture 43. Dot vs. Bracket Notation
-//How to retrive data from the object and how to change data of the object
-// 1st property is .dot notation by using this we can geting the property from 
-//.dot notaion or retrive the elment from object
+/*How to retrive data from the object and how to change data of the object
+ 1st property is .dot notation by using this we can geting the property from 
+.dot notaion or retrive the elment from object*/
 
 const akshay1 = {
     fName:'Akshay',
@@ -390,7 +390,7 @@ console.log(akshay1['designition']); //we have to specify string with property n
 //which is key. the big difference betn two is that in the bracekt notaion we can put 
 //any expression that we like. So we dont explicitly write string.but insted we can 
 //computed some operation because remember the operation is besically an expression 
-//some thing taht producess a value so we can put inside of the bracket.
+//some thing that producess a value so we can put inside of the bracket.
 
 //////// NOTE : In dot notation we can use only normal property name not a computed 
 //name but in bracket notation we can use normal and computed property name.///////
@@ -402,13 +402,19 @@ console.log(akshay1['l' +nameKey]); // Like this we can computed prperty
 //user interface. so we that use prompt function
 //Lets see the exmaple prompt fun return string so we have to store that string in 
 //a variable
-const intrstedIn = prompt('What do you want to know about the akshay ? Choose between fName, lname, age, designition, frds');  
-if(akshay1[intrstedIn]){
-console.log(akshay1[intrstedIn]);
-}
-else{
-    console.log('Wrong request ! Plz Choose between fName, lname, age, designition, frds'); 
-}
+
+
+//This is usefull just comment only pop shown
+// const intrstedIn = prompt('What do you want to know about the akshay ? Choose between fName, lname, age, designition, frds');  
+// if(akshay1[intrstedIn]){
+// console.log(akshay1[intrstedIn]);
+// }
+// else{
+//     console.log('Wrong request ! Plz Choose between fName, lname, age, designition, frds'); 
+// }
+
+
+
 
 akshay1.location = 'India';
 akshay1['twitter'] = '@baakshay';
@@ -436,7 +442,7 @@ const joe = {
 
 //    calcAge : function() {
 //     console.log(this);                        //we can used joe.birthYear1 also but if 
-//  //we chang the object name so it will no longer used thats why dry we used nad its
+//  //we chang the object name so it will no longer used thats why dry we used and its
 //  // a bad practice and it takes much times if we call this multiple time
 //     return 2023 - this.birthYear1;
 //    }
@@ -460,14 +466,14 @@ const info = {
    marks: 45,
    date:20,
     designition: 'Developer',
-    hasDrivingsLicense: true,
+    hasDrivingsLicense: false,
     
     data : function() {
         this.age = 2023 - this.birthYear;
         return this.age;
     },
     getSummery : function(){
-        return `${this.name} ${this.last} is a ${this.data()} -years old ${this.designition}, and he has ${hasDrivingsLicense ? 'a' : 'no'} driving licesnse `;
+        return `${this.name} ${this.last} is a ${this.data()} -years old ${this.designition}, and he has ${this.hasDrivingsLicense ? 'a' : 'no'} driving licesnse `;
         // return `${this.name} ${this.last} ${this.marks} ${this.date}`;
     }
 };
@@ -489,3 +495,164 @@ function ravi(){
 }
 let akshay11 = ['ak', ravi()];
 console.log(akshay11[1]);*/
+
+/*
+Let's go back to Mark and John comparing their BMIs! This time, let's use objects to
+ implement the calculations! 
+ Remember: BMI = mass / height ** 2 = mass / (height * height). 
+ (mass in kg and height in meter)
+
+1. For each of them, create an object with properties for their full name, mass, and 
+height (Mark Miller and John Smith)
+2. Create a 'calcBMI' method on each object to calculate the BMI (the same method on
+both objects). Store the BMI value to a property, and also return it from the method.
+3. Log to the console who has the higher BMI, together with the full name and the 
+respective BMI. Example: "John Smith's BMI (28.3) is higher than Mark Miller's (23.9)!"
+
+TEST DATA: Marks weights 78 kg and is 1.69 m tall. John weights 92 kg and is 1.95 m 
+tall.
+
+GOOD LUCK 😀
+*/
+const Mark = {
+    fullName : 'Mark Miller',
+    mass : 78,
+    height : 1.69, 
+    calcBMI : function(){
+        this.BMI = this.mass / this.height ** 2;
+        this.BMI;
+    }
+};
+
+const John = {
+    fullName : 'John Smith',
+    mass : 92,
+    height : 1.95,
+    calcBMI : function(){
+        this.BMI = this.mass / this.height ** 2;
+        return this.BMI;
+    } 
+};
+Mark.calcBMI();
+John.calcBMI();
+console.log(`mark bmi ${Mark.BMI} jhon bmi ${John.BMI}`);
+
+if(Mark.BMI > John.BMI){
+    console.log(`${Mark.fullName} BMI ${Mark.BMI} is higher than ${John.fullName} ${John.BMI}!`);
+}
+else if(John.BMI > Mark.BMI) {
+    console.log(`${John.fullName} BMI ${John.BMI} is higher than ${Mark.fullName} ${Mark.BMI}!`);
+}
+
+// Lecture 46. Iteration: The for Loop
+// for loop keep running while condition is TRUE
+for( let rep = 1; rep <= 10; rep++){
+    console.log(`Lifting weight Repetaion ${rep} *`);
+}
+
+//Lecture 47. Looping Arrays, Breaking and Continuing
+let birth = 2023 - 1996;
+const Vinay = ['Akshay', birth, 'Ravi', ['Dinesh', 'Vk', 'Pawan'], true];
+const type = [];
+for(let i=0; i< Vinay.length ;i++){
+    console.log(Vinay[i] , typeof Vinay[i]);
+
+    type.push(typeof Vinay[i]);
+}
+console.log(type);
+
+let yourAge = [1993, 1994, 2001, 2012, 1976, 1988];
+let date = new Date();  // latest date
+let latestYear1 = date.getFullYear();  //operator precsident goes left to right (. is operator presciedent)
+
+const agee = [];
+for(let i = 0; i< yourAge.length; i++){
+    agee.push(latestYear1 - yourAge[i]);
+}
+console.log(agee);
+
+//Continue and Break statment
+console.log('________ONLY STRING____________');
+for(let i = 0; i < Vinay.length; i++){
+    if(typeof Vinay[i] !== 'string') continue;
+    console.log(Vinay[i], typeof Vinay[i]);
+}
+
+console.log('________ONLY NUMBER____________');
+for(let i=0; i< Vinay.length; i++){
+    if(typeof Vinay[i] === 'number') break;
+    console.log(Vinay[i], typeof Vinay[i]);
+}
+
+
+//Lecture 48. Looping Backwards and Loops in Loops
+const Vinay1 = ['Akshay', birth, 'Ravi', ['Dinesh', 'Vk', 'Pawan'], true];
+for(let i= Vinay1.length-1; i >= 0; i--){
+    console.log(i,Vinay1[i]);
+}
+
+for(let exercise = 1; exercise < 4; exercise++){
+    console.log(`------Exerciese ${exercise}`);
+
+    for(let i=1; i < 6; i++){
+        console.log(`Exercise ${exercise} Lifting weigh repetaion ${i} 🏋️‍♂️`);
+    }
+}
+
+
+//Lecture 49. The while Loop
+
+let rep1 = 1;
+while (rep1 <= 10) {
+    console.log(`While: Lifting weigh repetaion ${rep1} 🏋️‍♂️`);
+    rep1++;
+}
+
+/*Kind of math captcha code
+<h1 id="demo"></h1>
+
+<script>
+let num1=Math.floor(Math.random() * 100);
+let num2=Math.floor(Math.random() * 100);
+document.getElementById("demo").innerHTML =
+(`${num1} + ${num2} = ${num1+num2}`);
+</script>
+*/
+/*Actually, there is much more alternative ways to remove the decimals from a number. But it's a tradeoff of readability and speed.
+
+Choosing the right one depends on what you need. If you just need to just remove decimals, always use trunc() or bitwise operators.
+The floor(), ceil() and round() are conceptually very different from trunc().
+
+Math library
+You already know these. Always use them in a standard, non-critical code.
+
+var v = 3.14; [Math.trunc(v), Math.round(v), Math.floor(v), Math.ceil(v)]
+// prints results
+for different input values you get these results
+
+ v        t   r   f   c
+ 3.87 : [ 3,  4,  3,  4]
+ 3.14 : [ 3,  3,  3,  4]
+-3.14 : [-3, -3, -4, -3]
+-3.87 : [-3, -4, -4, -3]
+Math.trunc() cuts away (truncates) the decimal places.
+Math.round() rounds towards closest integer number.
+Math.floor() rounds towards closest lower integer number. 3.5 -> 3 -3.5 -> -4
+Math.ceil() rounds towards closest higher integer number. 3.5 -> 4 -3.5 -> -3
+*/
+let dice = Math.trunc(Math.random() * 6) + 1;
+
+while (dice !== 6){
+    console.log(`You roll a ${dice}`);
+    dice = Math.trunc(Math.random() * 6) + 1;
+    if(dice === 6) {
+        console.log('Loop is about to end......');
+    }
+    else{
+        console.log('Loop start with 6 thats why empty...');
+    }
+
+}
+
+
+//Lecture 50. Coding Challenge #4
